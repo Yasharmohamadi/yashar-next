@@ -1,16 +1,10 @@
-import Link from "next/link";
+import Navbar from "@/components/Navbar/Navbar";
+import { navLinks } from "@/Data";
 
 export default function Home() {
 	return (
 		<>
-			<ul>
-				<li>
-					<Link href="/users">Users</Link>
-				</li>
-				<li>
-					<Link href="/posts">Posts</Link>
-				</li>
-			</ul>
+			<Navbar items={navLinks} />
 		</>
 	);
 }
