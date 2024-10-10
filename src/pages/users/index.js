@@ -1,14 +1,6 @@
 import Link from "next/link";
-import { useState } from "react";
 
 export default function Users(props) {
-	// const [users, setUsers] = useState([
-	// 	{ id: 1, name: "yashar" },
-	// 	{ id: 2, name: "eshi" },
-	// 	{ id: 3, name: "balas" },
-	// 	{ id: 4, name: "moji" },
-	// ]);
-    console.log(props.users);
 	return (
 			<ul>
 				{props.users.map((user) => (
@@ -18,4 +10,16 @@ export default function Users(props) {
 				))}
 			</ul>
 	);
+}
+
+
+// getServerSideProps() // Server-side Rendering  (SSR) // the page HTML is generated on each request.
+// getStaticProps() // Static Site Generation (SSG) // the page HTML is generated at build time.
+export async function getStaticProps() {
+	let response = await fetch("https://jsonplaceholder.typicode.com/users");
+	let users = await response.json();
+
+    return {
+        props: {users}
+    }
 }

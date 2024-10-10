@@ -121,3 +121,15 @@ li a:hover {
 .error-text {
 	margin-left: 10px;
 }
+
+.title{
+	margin-left: 10px;
+	font-size: 18px;
+	color: var(--black);
+}
+
+.text {
+	padding: 30px 20px;
+	text-align: justify;
+	font-size: 20px;
+}
